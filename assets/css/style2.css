@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.canvas{
+	width: 900px;
+	height: 570px;
+	text-align: center;
+	background-image: url('../images/forest.png');
+	border: 10px solid black;
+	border-radius: 10px;
+	background-size: 120% 100%;
+	float: left;
+	z-index: 0;
+}
+
+.hiding {
+    position: relative;
+    /* padding-top: 296px; */
+    z-index: 95;
+    bottom: -359px;
+    height: 154px;
+    width: 268px;
+}
+
+.hiding2{
+	position: absolute;
+	/*padding-top: 100px;*/ 
+	width: 125px;
+	height: 100px;
+	top: 259px;
+	z-index: 95;
+}
+
+
+
+.hiding4 {
+    position: absolute;
+    /* padding-top: 100px; */
+    width: 584px;
+    height: 553px;
+    top: -33px;
+    left: 213px;
+     z-index: 90;
+}
+.hiding3{
+	position: absolute;
+	/*padding-top: 100px;*/ 
+	width: 100px;
+	height: 100px;
+	top: 259px;
+	left: 288px;
+	z-index: 95;
+}
+
+#addScore1{
+    position: relative;
+    top: 41px;
+    left: -308px;
+    color: white;
+    background-color: darkgreen;
+    padding: 20px;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding-right: 25px;
+    z-index: 99;
+}
+
+
+#countdowntimer {
+    position: relative;
+    top: 133px;
+    left: -422px;
+    color: white;
+    background-color: darkgreen;
+    padding: 20px;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding-right: 25px;
+    z-index: 99;
+}
+
+#image{
+	width:60px;
+    height:60px;
+}

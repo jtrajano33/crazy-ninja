@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<title>Javascript Game</title>
+
+		<!-- bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+	<!-- external css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
+
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<!-- animate.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous">		
+	</script>
+
+</head>
+
+
+
+
+
+
+
+<body>
+	
+	<div class=" container canvas" id="canvasSize">
+
+        <div>
+            <img onclick="myScore1()" src="assets/images/ninja.png" id="image" class="animated fadeOut infinite" style="position: fixed; height: 100px; width: 100px; z-index: 93;" />
+        </div>
+
+		<span  id="addScore1">Score: 0</span>
+		<span  id="countdowntimer">Time left: 60</span>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img class="img-fluid hiding4" src="assets/images/tree.png">
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<img class="img-fluid hiding2" src="assets/images/rock.png">
+			</div>
+
+			<div class="col-md-6">
+				<img class="img-fluid hiding3" src="assets/images/rock.png">
+			</div>
+
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-fluid hiding" src="assets/images/grass.png">
+			</div>
+
+			<div class="col-md-4">
+				<img class="img-fluid hiding" src="assets/images/grass.png">
+			</div>
+
+			<div class="col-md-4">
+				<img class="img-fluid hiding" src="assets/images/grass.png">
+			</div>
+		</div>	
+				
+	</div>
+
+
+<script type="text/javascript">
+
+
+            var ctr= 1;
+
+
+            function myScore1(){
+            	document.getElementById("addScore1").innerHTML="Score: " + ctr;
+            	ctr++;
+            }
+
+	
+            window.onLoad = Prep();
+            
+            function Prep(){
+            	Canvas_Element = document.getElementById("canvasSize");
+                window_Height = Canvas_Element.clientHeight;
+                window_Width = Canvas_Element.clientWidth;
+                
+                image_Element = document.getElementById("image");
+                image_Height = image_Element.clientHeight;
+                image_Width = image_Element.clientWidth;
+                
+                availSpace_V = window_Height - image_Height;
+                availSpace_H = window_Width - image_Width;
+                
+                var changeInterval = 900;
+                setInterval(moveImage, changeInterval);
+            }
+            
+            function moveImage(){
+                var randNum_V = Math.round(Math.random() * availSpace_V);
+                var randNum_H = Math.round(Math.random() * availSpace_H);
+                
+                image_Element.style.top = randNum_V + "px";
+                image_Element.style.left = randNum_H + "px";
+            }
+
+
+			    var timeleft = 60;
+			    var downloadTimer = setInterval(function(){
+			    timeleft--;
+			    document.getElementById("countdowntimer").textContent ="Timeleft: " + timeleft;
+			    if(timeleft <= 0){
+			        clearInterval(downloadTimer);
+						if(timeleft==0){
+							ctr--
+							alert('Game Over! Your Score: ' + ctr);
+							ctr=0;
+							timeleft=60;
+						}			    	
+			    	}
+			    },1000);
+
+			
+
+</script>
+
+
+
+</body>
+
+</html>
+
