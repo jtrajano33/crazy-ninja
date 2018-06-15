@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+body{
+    max-width: 900px;
+    max-height: 570px;
+}
 
 .canvas{
 	width: 900px;
@@ -16,6 +20,24 @@
 	float: left;
 	z-index: 0;
 }
+
+
+.canvas4{
+    width: 900px;
+    height: 570px;
+    text-align: center;
+    background-color: black;
+    border: 10px solid black;
+    border-radius: 10px;
+    background-size: 120% 100%;
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
 
 .hiding {
     position: relative;
@@ -86,4 +108,29 @@
 #image{
 	width:60px;
     height:60px;
+}
+
+.gameover{
+    margin-top: 20%;
+    letter-spacing: 5px;
+}
+
+
+.scoreFont{
+    font-size: 27px;
+    margin-top: 30px;
+}
+
+.buttonDesign {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    margin-top: 80px;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.buttonDesign:hover{
+    transform: scale(1.1);
 }

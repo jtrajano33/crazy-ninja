@@ -36,33 +36,52 @@
 
 <body>
 
-	<div class="canvas">
+	<div class="canvas3">
 
-		
-			<div class="ninja">
-				<img class="animated fadeOut infinite" src="assets/images/ninja2.png">
+			<div id="percentCount" class="percent-count"></div>
+			<div class="progress-bar">
+				<div class="progress" id="progress"></div>
 			</div>
 
-			<div class="myintro">
-				<h1>Crazy Ninja v0.2</h1>
-				<button  class="intro"><a href="loadingPage.html">Press Start</a></button>
-			</div>
-		
+			<p id="instruction">INSTRUCTION: Catch as many ninja as you can before the timer runs out<br>COMING SOON: Crazy Ninja on Mobile!</p>
+
+
+			<div id="nextPage"><a href="select.html">Click here to continue >></a></div>
 
 
 	</div>
 
+
+	<script type="text/javascript">
+		function progress(){
+				var prg = document.getElementById('progress');
+				var percent = document.getElementById('percentCount');
+				var counter = 5;
+				var progress = 25;
+				var id = setInterval(frame,50);
+
+			function frame(){
+				if(progress == 500 && counter == 100){
+					clearInterval(id);
+					document.getElementById('nextPage').style.display = "block";
+				}
+
+				else{
+					progress+= 5;
+					counter+= 1;
+					prg.style.width = progress + 'px';
+					percent.innerHTML = "Loading: " + counter + '%';
+					document.getElementById('nextPage').style.display = "none";
+				}
+			}
+
+		}
+
+		progress();
+	</script>
+
 	
-	<!-- external custom js -->
 
-
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
-    <!-- external bootstrap js -->
-    <script src="assets/js/bootstrap.min.js"></script>
 </body>
 
 
